@@ -59,7 +59,7 @@ jobs:
     if: ${{ !github.event.pull_request.head.repo.fork && (needs.detect-changes.outputs.triton == 'true' || github.event_name == 'workflow_dispatch') }}
     name: Flash Attention - Triton (1 GPU)
     needs: [check-signal, detect-changes]
-    runs-on: aiter-mi355-1gpu
+    runs-on: linux-aiter-mi355-1
 
     steps:
       - name: Checkout aiter repo
@@ -162,7 +162,7 @@ jobs:
     if: false
     name: Flash Attention - CK (1 GPU)
     needs: [check-signal, detect-changes]
-    runs-on: aiter-mi355-1gpu
+    runs-on: linux-aiter-mi355-1
 
     steps:
       - name: Checkout aiter repo
